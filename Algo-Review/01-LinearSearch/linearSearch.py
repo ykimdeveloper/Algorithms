@@ -3,7 +3,7 @@ def linearSearch(arr, val):
         if arr[i] == val:
             return i 
     return -1
-
+  
 def main():
     arr = [53, 13, 64, 34, 12, 63, 91]
     val = 34

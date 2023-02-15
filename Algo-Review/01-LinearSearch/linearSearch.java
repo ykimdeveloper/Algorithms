@@ -1,7 +1,7 @@
 public class linearSearch{
     public static void main(String args[]){
         int[] array = {53, 13, 64, 34, 12, 63, 53};
-        int index = linear_earch(array, 34);
+        int index = linear_search(array, 34);
 
         if(index != -1){
             System.out.println("Element found at index: " + index);
@@ -11,7 +11,7 @@ public class linearSearch{
         }
     }
 
-    private static int linear_earch(int[] array, int value){
+    private static int linear_search(int[] array, int value){
         for(int i = 0; i<array.length; i++){
             if(array[i]==value){
                 return i;

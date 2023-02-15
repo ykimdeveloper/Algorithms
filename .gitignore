@@ -1,0 +1,21 @@
+# Executables C++
+ *.exe 
+ *.out 
+ *.app 
+
+# Libraries C++
+ *.lib
+
+#compiled Object Files C++
+ *.obj 
+
+
+
+# Compiled class  Java
+ *.class 
+ *.log 
+ *.jar
+
+
+# vscode 
+ .vscode

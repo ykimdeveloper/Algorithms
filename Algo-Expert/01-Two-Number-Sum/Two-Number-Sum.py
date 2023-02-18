@@ -9,3 +9,21 @@
 
 # {3: True, 5: True, -4 : True, 8 : True, 11 : True, 1 : True, 1 : True, -1 : True}
 # {3: True, 5: True, -4 : True, 8 : True, 11 : False, 1 : True, 1 : True, -1 : False}
+
+
+def twoSum(target, array):
+    for i in range(0, len(array)):
+        for j in range(i+1, len(array)-1):
+            if array[i]+array[j] == target:
+                return array[i], array[j]
+
+
+def main():
+    arr = [3, 5, -4, 8, 11, 1, -1, 6]
+    target = 10
+    val1, val2, = twoSum(target, arr)
+    print(str(val1) + " " + str(val2))
+
+
+if __name__ == "__main__":
+    main() 

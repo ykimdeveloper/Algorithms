@@ -29,6 +29,17 @@ def twoSumHT(target, array):
             storage[array[i]] = i
     return []
 
+
+def twoNumberSum(array, targetSum):
+    nums = {}
+    for num in array:
+        potentialMatch = targetSum - num
+        if potentialMatch in nums:
+            return [potentialMatch, num] if potentialMatch < num else [num, potentialMatch]
+        else:
+            nums[num] = True
+    return []
+
 def main():
     arr = [3, 5, -4, 8, 11, 1, -1, 6]
     target = 10
@@ -36,6 +47,9 @@ def main():
     print(twosumbf)
     twosumht= twoSumHT(target, arr)
     print(twosumht)
+
+    tt = twoNumberSum(arr, target)
+    print(tt)
 
 
 

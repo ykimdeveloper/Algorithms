@@ -7,22 +7,37 @@
 # Sample input: [3, 5, -4, 8, 11, 1, -1, 6], 10 
 # Sample output:[-1, 11]
 
-# {3: True, 5: True, -4 : True, 8 : True, 11 : True, 1 : True, 1 : True, -1 : True}
-# {3: True, 5: True, -4 : True, 8 : True, 11 : False, 1 : True, 1 : True, -1 : False}
 
-
-def twoSum(target, array):
-    for i in range(0, len(array)):
-        for j in range(i+1, len(array)-1):
+#brute force
+# O(n^2) time & O(1)space
+def twoSumBF(target, array):
+    for i in range(0, len(array)-1):
+        for j in range(i+1, len(array)):
             if array[i]+array[j] == target:
-                return array[i], array[j]
+                return [array[i], array[j]]
+    return []
 
+#hash table
+# O(n) time & O(n) space
+def twoSumHT(target, array):
+    storage = {}
+    for i in range(0, len(array)-1):
+        temp = target - array[i]
+        if temp in storage and (target == temp + array[i]):
+            return [temp, array[i]]
+        else:
+            storage[array[i]] = i
+    return []
 
 def main():
     arr = [3, 5, -4, 8, 11, 1, -1, 6]
     target = 10
-    val1, val2, = twoSum(target, arr)
-    print(str(val1) + " " + str(val2))
+    twosumbf = twoSumBF(target, arr)
+    print(twosumbf)
+    twosumht= twoSumHT(target, arr)
+    print(twosumht)
+
+
 
 
 if __name__ == "__main__":
